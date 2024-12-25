@@ -1,0 +1,463 @@
+/* Modern Reset & Variables */
+:root {
+    --apple-blue: #0066cc;
+    --apple-dark: #1d1d1f;
+    --apple-gray: #f5f5f7;
+    --apple-text: #86868b;
+    --apple-border: #d2d2d7;
+    --apple-gradient: linear-gradient(135deg, #0066cc, #6699ff);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--apple-gray);
+    color: var(--apple-dark);
+    line-height: 1.47059;
+    letter-spacing: -0.022em;
+}
+
+/* 现代化的容器 */
+.container {
+    width: 980px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 导航栏样式 */
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    border-bottom: 1px solid var(--apple-border);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px;
+}
+
+.logo a {
+    background: var(--apple-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: -0.03em;
+}
+
+nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: var(--apple-dark);
+    text-decoration: none;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+/* Modern Hero Section */
+.hero {
+    padding: 120px 0 80px;
+    background: var(--apple-gray);
+    margin-bottom: 40px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.003em;
+    margin-bottom: 24px;
+    background: var(--apple-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0.009em;
+    color: var(--apple-text);
+}
+
+.hero img {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease;
+}
+
+.hero img:hover {
+    transform: scale(1.02) translateY(-10px);
+}
+
+/* Enhanced Project Cards */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.project-card {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    height: 100%;
+    position: relative;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.project-card-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: var(--apple-dark);
+    font-weight: 600;
+    background: var(--apple-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.project-card p {
+    color: var(--apple-text);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.view-project {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--apple-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.view-project:hover {
+    gap: 12px;
+}
+
+.view-project i {
+    transition: transform 0.3s ease;
+}
+
+.view-project:hover i {
+    transform: translateX(4px);
+}
+
+/* Modern Contact Form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+form label {
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+    background: var(--white);
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+form button {
+    background: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+form button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Footer */
+footer {
+    background: linear-gradient(135deg, var(--primary-color), #ffd6e7);
+    color: var(--text-color);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 4rem;
+}
+
+/* Animations */
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 100px 0 40px;
+    }
+    
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .hero-text h1 {
+        font-size: 36px;
+    }
+    
+    .hero-text p {
+        font-size: 20px;
+    }
+    
+    .hero img {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .project-header h1 {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        height: auto;
+        padding: 16px 0;
+    }
+    
+    nav ul {
+        gap: 1.5rem;
+        margin-top: 16px;
+    }
+    
+    .project-description,
+    .project-files {
+        padding: 24px;
+    }
+}
+
+/* 联系表单 */
+.contact-section {
+    padding: 80px 0;
+    background: #fff;
+    border-radius: 20px;
+    margin: 40px 0;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--apple-dark);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--apple-border);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--apple-blue);
+    box-shadow: 0 0 0 3px rgba(0,102,204,0.1);
+}
+
+.submit-button {
+    background: var(--apple-gradient);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,102,204,0.2);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --apple-gray: #1d1d1f;
+        --apple-dark: #f5f5f7;
+        --apple-text: #86868b;
+    }
+
+    .project-card,
+    .contact-form {
+        background: #2d2d2f;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        background: #1d1d1f;
+        border-color: #3d3d3f;
+        color: #f5f5f7;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+section {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+section:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+section:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* 滑动动画 */
+.slide-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.slide-in.from-left {
+    transform: translateX(-50px);
+}
+
+.slide-in.from-right {
+    transform: translateX(50px);
+}
+
+.slide-in-visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* 添加延迟效果 */
+.slide-in.delay-1 {
+    transition-delay: 0.2s;
+}
+
+.slide-in.delay-2 {
+    transition-delay: 0.4s;
+}
+
+.slide-in.delay-3 {
+    transition-delay: 0.6s;
+}

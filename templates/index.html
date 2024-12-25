@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% from "components/hero.html" import hero %}
+{% from "components/project_card.html" import project_card %}
+{% from "components/contact_form.html" import contact_form %}
+
+{% block content %}
+<div class="hero slide-in">
+    {{ hero() }}
+</div>
+
+<main>
+    <section id="about" class="slide-in from-left">
+        <div class="container">
+            <h2>About Me</h2>
+            <p style="color: var(--apple-text); font-size: 18px; line-height: 1.8;">
+                I am a passionate developer with expertise in building modern web applications. 
+                My focus is on creating elegant solutions that combine innovative technology with intuitive design.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="slide-in">Projects</h2>
+            <div class="project-gallery">
+                {% for project in projects.values() %}
+                    <div class="slide-in delay-{{ loop.index }}">
+                        {{ project_card(project) }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="slide-in from-right">
+        <div class="container">
+            <h2>Contact</h2>
+            {{ contact_form(form) }}
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/form.js') }}"></script>
+{% endblock %}

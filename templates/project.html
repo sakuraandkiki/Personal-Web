@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }}{% endblock %}
+
+{% block content %}
+<main class="project-detail">
+    <div class="container">
+        <div style="height: 60px;"></div>
+        
+        <div class="project-header slide-in">
+            <h1>{{ project.title }}</h1>
+        </div>
+        
+        <div class="project-video slide-in delay-1">
+            <video controls width="100%">
+                <source src="{{ project.video_url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="project-content">
+            <div class="project-description slide-in from-left delay-2">
+                <h2>Project Description</h2>
+                <p>{{ project.description }}</p>
+            </div>
+
+            <div class="project-files slide-in from-right delay-3">
+                <h2>Project Files</h2>
+                <div class="files-list">
+                    {% for file in project.files %}
+                    <div class="file-item">
+                        <a href="{{ url_for('projects.download_file', filename=file) }}" class="download-button">
+                            <div class="file-info">
+                                <i class="fas fa-file-alt file-icon"></i>
+                                <span class="file-name">{{ file }}</span>
+                            </div>
+                            <i class="fas fa-download download-icon"></i>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
